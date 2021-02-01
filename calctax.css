@@ -21,9 +21,11 @@ header h2{
     text-align: center;
 }
 .main{
-  margin-left: 50%;
-  transform: translateX(-50%);
+  /* margin-left: 50%;
+  transform: translateX(-50%); */
   /* width: 80%; */
+
+  border: 1px solid black;
 }
 .main input{
   width: 8em;
