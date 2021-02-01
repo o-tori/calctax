@@ -20,3 +20,12 @@ header h2{
 
     text-align: center;
 }
+.contents input{
+  text-align: right;
+}
+.contents .requiredInput{
+  background-color: yellow;
+}
+.contents .underline{
+  border-bottom: 1px solid black;
+}

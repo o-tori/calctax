@@ -5,10 +5,49 @@
   <meta name="viewport" content="width=device-width">
   <meta charset="utf-8">
   <title>税金計算器</title>
-  <link rel="stylesheet" href=".css">
+  <link rel="stylesheet" href="calctax.css">
 </head>
 
 <body>
+  <header>
+    <h2>calctax</h2>
+  </header>
+
+  <div class="contents">
+    <div class="description">
+      <p>黄色のとこに入力しろよな</p>
+    </div>
+
+    <div class="main">
+      <div id="nenshu">
+        <table>
+          <tr>
+            <td>給与収入</td>
+            <td><input id="給与収入" class="requiredInput" type="number" value="0" onchange="inputKyuuyo(value)">円</td>
+          </tr>
+
+          <tr >
+            <td class="underline">給与所得控除</td>
+            <td class="underline">-<input id="給与所得控除" type="number" name="" value="0" readonly>円</td>
+          </tr>
+
+          <tr>
+            <td>総所得金額</td>
+            <td><input id="総所得金額" type="number" name="" value="0" readonly>円</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+
+        </table>
+      </div><!-- nenshu -->
+    </div> <!-- main -->
+  </div><!-- contents -->
+
+<script src="calctax.js">
+
+</script>
 </body>
 
 </html>
