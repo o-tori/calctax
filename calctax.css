@@ -9,7 +9,7 @@ header{
 
   background-color:#099;
 }
-header h2{
+header h1{
   margin-top:35px;
   margin-left:20px;
   transform: translateY(-50%);
@@ -18,12 +18,16 @@ header h2{
 .contents{
     margin-top:90px;
 
+    font-size: larger;
     text-align: center;
 }
 .main{
   /* margin-left: 50%;
   transform: translateX(-50%); */
   /* width: 80%; */
+  display: grid;
+  grid-template-rows: repeat(10,2em);
+  grid-template-columns:15em 1fr;
 
   border: 1px solid black;
 }
@@ -37,8 +41,8 @@ header h2{
 .main .underline{
   border-bottom: 1px solid black;
 }
-.grid{
-  display: grid;
-  grid-template-rows: repeat(5,2em);
-  grid-template-columns:10em 1fr;
+
+
+aside{
+  margin-top: 50px;
 }

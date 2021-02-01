@@ -10,7 +10,7 @@
 
 <body>
   <header>
-    <h2>calctax</h2>
+    <h1>calctax</h1>
   </header>
 
   <div class="contents">
@@ -18,23 +18,23 @@
       <p>黄色のとこに入力しろよな</p>
     </div>
 
-    <div class="main grid">
+    <div class="main">
       <div class="mainleft">
-        給与収入
+        &#9312;給与収入
       </div>
       <div class="mainright">
         <input id="給与収入" class="requiredInput" type="number" value="0" onchange="inputKyuuyo(value)">円
       </div>
 
-      <div class="mainleft">
-        給与所得控除
+      <div class="mainleft underline">
+        &#9313;給与所得控除
       </div>
-      <div class="mainright">
+      <div class="mainright underline">
         -<input id="給与所得控除" type="number" name="" value="0" readonly>円
       </div>
 
       <div class="mainleft">
-        総所得金額
+        &#9314;総所得金額(&#9312;-&#9313;)
       </div>
       <div class="mainright">
         <input id="総所得金額" type="number" name="" value="0" readonly>円
@@ -44,33 +44,48 @@
       <div class=""></div><div class=""></div>
 
       <div class="mainleft">
-        厚生年金控除
+        &#9315;厚生年金保険料控除
       </div>
 
       <div class="mainright">
-        -<input id="厚生年金控除" type="number" value="0" readonly>円
+        -<input id="厚生年金保険料控除" type="number" value="0" readonly>円
       </div>
 
       <div class="mainleft">
-        健康保険料控除
+        &#9316;健康保険料控除
       </div>
       <div class="mainright">
         -<input id="健康保険料控除" type="number" name="" value="0" readonly>円
       </div>
 
       <div class="mainleft">
-        社会保険料控除
+        &#9317;社会保険料控除(&#9315;+&#9316;)
       </div>
       <div class="mainright">
         -<input id="社会保険料控除" type="number" name="" value="0" readonly>円</td>
       </div>
 
+
     </div> <!-- main -->
   </div><!-- contents -->
 
-<script src="calctax.js">
-
-</script>
+  <aside class="">
+    <div class="">
+      ・給与所得控除:給与の一部を経費としてみなすことができる。
+      <a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm">計算式</a>
+    </div>
+    <div class="">
+      ・総所得金額:給与から給与所得控除を引いたもの。
+    </div>
+    <div class="">
+      ・厚生年金保険料控除:「給与 × 18.3% ÷ 2」で算出しています
+    </div>
+    <div class="">
+      ・健康保険料:宮城県のもので算出。
+      条件は「介護保険第２号被保険者に該当しない場合」で「折半」
+    </div>
+  </aside>
+<script src="calctax.js"></script>
 </body>
 
 </html>
