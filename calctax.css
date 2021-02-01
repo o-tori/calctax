@@ -21,6 +21,8 @@ header h1{
   margin-top:25px;
   margin-left:20px;
   transform: translateY(-50%);
+
+  color: white;
   font-weight: lighter;
 }
 
@@ -65,4 +67,7 @@ h3{
 
 aside{
   font-size: medium;
+}
+aside .toplevelLi{
+  margin-bottom : 10px;
 }
