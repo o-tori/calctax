@@ -18,12 +18,9 @@
       <p>
         <span class="requiredInput">黄色</span>のとこに入力しろよな
         <br>
-        <a href="https://www.zeikin5.com/calc/">このサイト</a>
-        を自分用に特化したバージョンです
-        <br>
-        いちおうロジックは全部自分で考えて書いてる
-        <br>
         未実装の控除:配偶者,医療費,生命保険,地震保険
+        <br>
+        参考:<a href="https://www.zeikin5.com/calc/">このサイト</a>
       </p>
     </div>
 
@@ -87,17 +84,17 @@
       <div class=""></div><div class=""></div>
 
       <div class="mainleft">
-        &#9319;扶養控除-所得(下で入力)
+        &#9319;扶養控除-所得税(下で入力)
       </div>
       <div class="mainright">
-        <input id="扶養控除-所得" type="number" value="0" readonly>円
+        <input id="扶養控除-所得税" type="number" value="0" readonly>円
       </div>
 
       <div class="mainleft">
-        &#9320;扶養控除-住民(下で入力)
+        &#9320;扶養控除-住民税(下で入力)
       </div>
       <div class="mainright">
-        <input id="扶養控除-住民" type="number" value="0" readonly>円
+        <input id="扶養控除-住民税" type="number" value="0" readonly>円
       </div>
 
       <!-- empty row -->
@@ -111,36 +108,83 @@
       </div>
 
       <div class="mainleft">
-        &#9321;配偶者控除-所得
+        &#9321;配偶者控除-所得税
       </div>
       <div class="mainright">
-        <input id="配偶者控除-所得" type="number" value="0" readonly>円
+        <input id="配偶者控除-所得税" type="number" value="0" readonly>円
       </div>
 
       <div class="mainleft">
-        &#9322;配偶者控除-住民
+        &#9322;配偶者控除-住民税
       </div>
       <div class="mainright">
-        <input id="配偶者控除-住民" type="number" value="0" readonly>円
+        <input id="配偶者控除-住民税" type="number" value="0" readonly>円
       </div>
 
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
       <div class="mainleft">
-        &#9323;基礎控除-所得
+        &#9323;基礎控除-所得税
       </div>
       <div class="mainright">
-        <input id="基礎控除-所得" type="number" value="0" readonly>円
+        <input id="基礎控除-所得税" type="number" value="0" readonly>円
       </div>
 
       <div class="mainleft">
-        &#9324;基礎控除-住民
+        &#9324;基礎控除-住民税
       </div>
       <div class="mainright">
-        <input id="基礎控除-住民" type="number" value="0" readonly>円
+        <input id="基礎控除-住民税" type="number" value="0" readonly>円
       </div>
 
+      <!-- empty row -->
+      <div class=""></div><div class=""></div>
+
+      <div class="mainleft">
+        &#9325;課税所得-所得税(&#9314;-&#9318;-&#9319;-&#9321;-&#9323;)
+      </div>
+      <div class="mainright">
+        <input id="課税所得-所得税" type="number" value="0" readonly>円
+      </div>
+
+      <div class="mainleft">
+        &#9326;課税所得-住民税(&#9314;-&#9318;-&#9320;-&#9322;-&#9324;)
+      </div>
+      <div class="mainright">
+        <input id="課税所得-住民税" type="number" value="0" readonly>円
+      </div>
+
+      <!-- empty row -->
+      <div class=""></div><div class=""></div>
+
+      <div class="mainleft">
+        &#9327;所得税(&#9325;*5%)
+      </div>
+      <div class="mainright">
+        <input id="所得税" type="number" value="0" readonly>円
+      </div>
+
+      <div class="mainleft">
+        &#9327;復興特別所得税(&#9327;*2.1%)
+      </div>
+      <div class="mainright">
+        <input id="復興特別所得税" type="number" value="0" readonly>円
+      </div>
+
+      <div class="mainleft">
+        &#9328;<strong>所得税・復興特別所得税</strong>(&#9327;+&#9328;)
+      </div>
+      <div class="mainright">
+        <input id="所得税・復興特別所得税" type="number" value="0" readonly>円
+      </div>
+
+      <div class="mainleft">
+        &#9329;<strong>住民税</strong>(&#9326;*10% +α)
+      </div>
+      <div class="mainright">
+        <input id="住民税" type="number" value="0" readonly>円
+      </div>
 
     </div> <!-- main -->
 

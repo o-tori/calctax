@@ -1,9 +1,24 @@
 
 //一番大事な関数
+//TODO
 function calc() {
   const soushotoku = document.getElementById("総所得金額").value;
-  let kazeishotokuShotoku = soushotoku;
-  
+
+  const shakaiKoujo_shotoku = document.getElementById("社会保険料控除").value;
+  const huyouKoujo_shotoku = document.getElementById("扶養控除-所得税").value;
+  const haiguushaKoujo_shotoku = document.getElementById("配偶者控除-所得税").value;
+
+  let kazeishotoku_shotoku = soushotoku;
+  //控除していく
+  kazeishotoku_shotoku -= shakaiKoujo_shotoku;
+  kazeishotoku_shotoku -= huyouKoujo_shotoku;
+  kazeishotoku_shotoku -= haiguushaKoujo_shotoku;
+
+  kazeishotoku_shotoku = Math.min(0,kazeishotoku_shotoku); //マイナスチェック
+  const kisoKoujo_shotoku = Math.min(kazeishotoku_shotoku,480000);
+  document.getElementById("基礎控除-所得税").value = kisoKoujo_shotoku;
+//TODO shotokuzei 続き
+//TODO juuminzei
 }
 
 // 給与所得入力によって、給与所得控除を決定
@@ -165,8 +180,8 @@ function calcHuyou() {
   const huyouJuumin  = ippan*330000 + tokutei*450000
                         + doukyoroushin*450000 + roujin*380000;
 
-  document.getElementById("扶養控除-所得").value = huyouShotoku;
-  document.getElementById("扶養控除-住民").value = huyouJuumin;
+  document.getElementById("扶養控除-所得税").value = huyouShotoku;
+  document.getElementById("扶養控除-住民税").value = huyouJuumin;
 }
 //TODO
 function calcHaiguusha(){
