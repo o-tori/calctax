@@ -20,12 +20,18 @@ header h2{
 
     text-align: center;
 }
-.contents input{
+.main{
+  margin-left: 50%;
+  transform: translateX(-50%);
+  /* width: 80%; */
+}
+.main input{
+  width: 8em;
   text-align: right;
 }
-.contents .requiredInput{
+.main .requiredInput{
   background-color: yellow;
 }
-.contents .underline{
+.main .underline{
   border-bottom: 1px solid black;
 }
