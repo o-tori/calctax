@@ -1,0 +1,22 @@
+body{
+}
+header{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:70px;
+
+  background-color:#099;
+}
+header h2{
+  margin-top:35px;
+  margin-left:20px;
+  transform: translateY(-50%);
+}
+
+.contents{
+    margin-top:90px;
+
+    text-align: center;
+}
