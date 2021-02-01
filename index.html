@@ -18,49 +18,52 @@
       <p>黄色のとこに入力しろよな</p>
     </div>
 
-    <div class="main">
-      <div id="nenshu">
-        <table>
-          <tr>
-            <td>給与収入</td>
-            <td><input id="給与収入" class="requiredInput" type="number" value="0" onchange="inputKyuuyo(value)">円</td>
-          </tr>
+    <div class="main grid">
+      <div class="mainleft">
+        給与収入
+      </div>
+      <div class="mainright">
+        <input id="給与収入" class="requiredInput" type="number" value="0" onchange="inputKyuuyo(value)">円
+      </div>
 
-          <tr >
-            <td class="underline">給与所得控除</td>
-            <td class="underline">-<input id="給与所得控除" type="number" name="" value="0" readonly>円</td>
-          </tr>
+      <div class="mainleft">
+        給与所得控除
+      </div>
+      <div class="mainright">
+        -<input id="給与所得控除" type="number" name="" value="0" readonly>円
+      </div>
 
-          <tr>
-            <td>総所得金額</td>
-            <td><input id="総所得金額" type="number" name="" value="0" readonly>円</td>
-          </tr>
-        </table>
-      </div><!-- nenshu -->
+      <div class="mainleft">
+        総所得金額
+      </div>
+      <div class="mainright">
+        <input id="総所得金額" type="number" name="" value="0" readonly>円
+      </div>
 
-      <div id="koujo">
-        <table>
-          <tr>
-            <td>厚生年金控除</td>
-            <td><input id="厚生年金控除" type="number" value="0" >円</td>
-          </tr>
+      <!-- empty row -->
+      <div class=""></div><div class=""></div>
 
-          <tr >
-            <td class="underline">健康保険料控除</td>
-            <td class="underline">-<input id="給与所得控除" type="number" name="" value="0" readonly>円</td>
-          </tr>
+      <div class="mainleft">
+        厚生年金控除
+      </div>
 
-          <tr>
-            <td>総所得金額</td>
-            <td><input id="総所得金額" type="number" name="" value="0" readonly>円</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-          </tr>
+      <div class="mainright">
+        -<input id="厚生年金控除" type="number" value="0" readonly>円
+      </div>
 
-        </table>
-      </div><!-- koujo -->
+      <div class="mainleft">
+        健康保険料控除
+      </div>
+      <div class="mainright">
+        -<input id="健康保険料控除" type="number" name="" value="0" readonly>円
+      </div>
+
+      <div class="mainleft">
+        社会保険料控除
+      </div>
+      <div class="mainright">
+        -<input id="社会保険料控除" type="number" name="" value="0" readonly>円</td>
+      </div>
     </div> <!-- main -->
   </div><!-- contents -->
 

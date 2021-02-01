@@ -1,7 +1,7 @@
 body{
 }
 header{
-  position:absolute;
+  position:fixed;
   top:0;
   left:0;
   width:100vw;
@@ -36,4 +36,9 @@ header h2{
 }
 .main .underline{
   border-bottom: 1px solid black;
+}
+.grid{
+  display: grid;
+  grid-template-rows: repeat(5,2em);
+  grid-template-columns:10em 1fr;
 }
