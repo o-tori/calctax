@@ -1,5 +1,8 @@
+html{
+  width: 530px;
+}
 body{
-  width: 500px;
+  width: 530px;
 }
 header{
   position:fixed;
@@ -38,7 +41,7 @@ h3{
 }
 #main{
   display: grid;
-  grid-template-rows: repeat(10,2em);
+  grid-template-rows: repeat(13,2em);
   grid-template-columns:15em 1fr;
 }
 #main input{

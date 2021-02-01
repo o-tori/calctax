@@ -154,9 +154,14 @@ function calcHuyou() {
   const doukyoroushin = document.getElementById("huyou-doukyoroushin").value;
   const roujin = document.getElementById("huyou-roujin").value;
 
-  const huyouShotoku = ippan*380000 + tokutei*630000 + doukyoroushin*580000 + roujin*480000;
-  const huyouJuumin  = ippan*330000 + tokutei*450000 + doukyoroushin*450000 + roujin*380000;
+  const huyouShotoku = ippan*380000 + tokutei*630000
+                        + doukyoroushin*580000 + roujin*480000;
+  const huyouJuumin  = ippan*330000 + tokutei*450000
+                        + doukyoroushin*450000 + roujin*380000;
 
   document.getElementById("扶養控除-所得").value = huyouShotoku;
   document.getElementById("扶養控除-住民").value = huyouJuumin;
+}
+function calcHaiguusha(){
+  
 }
