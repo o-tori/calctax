@@ -22,6 +22,8 @@
         を自分用に特化したバージョンです
         <br>
         いちおうロジックは全部自分で考えて書いてる
+        <br>
+        未実装の控除:配偶者,医療費,生命保険,地震保険
       </p>
     </div>
 
@@ -32,7 +34,7 @@
       </div>
       <div class="mainright">
         <input id="給与収入" class="requiredInput"
-          type="number" value="0" onchange="inputKyuuyo(value)">円
+          type="number" value="0" onchange="inputKyuuyo();calc();">円
       </div>
 
       <div class="mainleft ">
@@ -81,6 +83,9 @@
         <input id="社会保険料控除" type="number" value="0" readonly>円
       </div>
 
+      <!-- empty row -->
+      <div class=""></div><div class=""></div>
+
       <div class="mainleft">
         &#9319;扶養控除-所得(下で入力)
       </div>
@@ -95,8 +100,11 @@
         <input id="扶養控除-住民" type="number" value="0" readonly>円
       </div>
 
+      <!-- empty row -->
+      <div class=""></div><div class=""></div>
+
       <div class="mainleft">
-        　配偶者の所得
+        　配偶者の所得 <span style="color:blue">※未実装</span>
       </div>
       <div class="mainright">
         <input id="配偶者所得" class="requiredInput" type="number" value="0">円
@@ -114,6 +122,23 @@
       </div>
       <div class="mainright">
         <input id="配偶者控除-住民" type="number" value="0" readonly>円
+      </div>
+
+      <!-- empty row -->
+      <div class=""></div><div class=""></div>
+
+      <div class="mainleft">
+        &#9323;基礎控除-所得
+      </div>
+      <div class="mainright">
+        <input id="基礎控除-所得" type="number" value="0" readonly>円
+      </div>
+
+      <div class="mainleft">
+        &#9324;基礎控除-住民
+      </div>
+      <div class="mainright">
+        <input id="基礎控除-住民" type="number" value="0" readonly>円
       </div>
 
 
@@ -207,7 +232,7 @@
         </li>
         <li>
           健康保険料:宮城県のもので算出。
-          条件は「介護保険第２号被保険者に該当しない場合」で「折半」
+          条件は「介護保険第２号被保険者に該当しない場合」で「労使折半」
         </li>
         <li>
           雇用保険料:一般社員として算出。計算式は「給与収入*0.003」
@@ -219,7 +244,10 @@
             <li>住民税の扶養控除は各33/45/45/38万円</li>
           </ul>
         </li>
-
+        <li>
+          配偶者控除:難解。納税者本人と配偶者の所得が両方とも関わる。
+          ここでは、給与所得以外の収入はないものとして計算している。
+        </li>
       </ul>
     </aside>
   </div><!-- contents -->

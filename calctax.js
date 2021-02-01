@@ -1,14 +1,20 @@
 
+//一番大事な関数
+function calc() {
+  const soushotoku = document.getElementById("総所得金額").value;
+  let kazeishotokuShotoku = soushotoku;
+  
+}
+
 // 給与所得入力によって、給与所得控除を決定
-function inputKyuuyo(salary){
+function inputKyuuyo(){
+  const salary = document.getElementById("給与収入").value;
   const ksk = calcKyuuyoShotokuKoujo(salary);
   document.getElementById("給与所得控除").value = ksk;
-
   const soushotoku = salary - ksk;
   document.getElementById("総所得金額").value = soushotoku;
 
   const kousei = calcKousei(salary);
-  console.log("q");
   document.getElementById("厚生年金保険料控除").value = kousei;
   const kenkou = calcMiyagiKenkou(salary);
   document.getElementById("健康保険料控除").value = kenkou;
@@ -162,6 +168,10 @@ function calcHuyou() {
   document.getElementById("扶養控除-所得").value = huyouShotoku;
   document.getElementById("扶養控除-住民").value = huyouJuumin;
 }
+//TODO
 function calcHaiguusha(){
-  
+  if(document.getElementById("総所得金額").value >= 10000000){
+    return;
+  }
+
 }

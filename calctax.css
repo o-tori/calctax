@@ -1,10 +1,10 @@
 html{
-  width: 530px;
+  max-width: 530px;
   margin-left: auto;
   margin-right: auto;
 }
 body{
-  width: 530px;
+  max-width: 530px;
   /* transform: translateX(-50%); */
 }
 header{
@@ -15,7 +15,7 @@ header{
   width:100%;
   height:50px;
 
-  background-color:#099;
+  background-color:#078;
 }
 header h1{
   margin-top:25px;
@@ -30,7 +30,7 @@ header h1{
     font-size: larger;
 }
 h3{
-  border-left: 5px solid #099;
+  border-left: 5px solid #078;
   padding-left: 10px;
 }
 .description{
@@ -46,7 +46,7 @@ h3{
 }
 #main{
   display: grid;
-  grid-template-rows: repeat(13,2em);
+  grid-template-rows: repeat(20,2em);
   grid-template-columns:1fr 7em;
 }
 #main input{
