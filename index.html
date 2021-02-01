@@ -4,7 +4,7 @@
 <head>
   <!-- <meta name="viewport" content="width=device-width"> -->
   <meta charset="utf-8">
-  <title>税金計算器</title>
+  <title>個人用税金計算器</title>
   <link rel="stylesheet" href="calctax.css">
 </head>
 
@@ -15,26 +15,35 @@
 
   <div class="contents">
     <div class="description">
-      <p>黄色のとこに入力しろよな</p>
+      <p>
+        <span class="requiredInput">黄色</span>のとこに入力しろよな
+        <br>
+        <a href="https://www.zeikin5.com/calc/">このサイト</a>
+        を自分用に特化したバージョンです
+        <br>
+        いちおうロジックは全部自分で考えて書いてる
+      </p>
     </div>
 
-    <div class="main">
+    <h3>税金計算器</h3>
+    <div id="main"class="border">
       <div class="mainleft">
         &#9312;給与収入
       </div>
       <div class="mainright">
-        <input id="給与収入" class="requiredInput" type="number" value="0" onchange="inputKyuuyo(value)">円
+        <input id="給与収入" class="requiredInput"
+          type="number" value="0" onchange="inputKyuuyo(value)">円
       </div>
 
-      <div class="mainleft underline">
+      <div class="mainleft ">
         &#9313;給与所得控除
       </div>
-      <div class="mainright underline">
-        -<input id="給与所得控除" type="number" name="" value="0" readonly>円
+      <div class="mainright ">
+        <input id="給与所得控除" type="number" name="" value="0" readonly>円
       </div>
 
       <div class="mainleft">
-        &#9314;総所得金額(&#9312;-&#9313;)
+        &#9314;<strong>総所得金額</strong>(&#9312;-&#9313;)
       </div>
       <div class="mainright">
         <input id="総所得金額" type="number" name="" value="0" readonly>円
@@ -48,43 +57,153 @@
       </div>
 
       <div class="mainright">
-        -<input id="厚生年金保険料控除" type="number" value="0" readonly>円
+        <input id="厚生年金保険料控除" type="number" value="0" readonly>円
       </div>
 
       <div class="mainleft">
         &#9316;健康保険料控除
       </div>
       <div class="mainright">
-        -<input id="健康保険料控除" type="number" name="" value="0" readonly>円
+        <input id="健康保険料控除" type="number" name="" value="0" readonly>円
       </div>
 
       <div class="mainleft">
-        &#9317;社会保険料控除(&#9315;+&#9316;)
+        &#9317;雇用保険料控除
       </div>
       <div class="mainright">
-        -<input id="社会保険料控除" type="number" name="" value="0" readonly>円</td>
+        <input id="雇用保険料控除" type="number" name="" value="0" readonly>円
+      </div>
+
+      <div class="mainleft">
+        &#9318;社会保険料控除(&#9315;+&#9316;+&#9317;)
+      </div>
+      <div class="mainright">
+        <input id="社会保険料控除" type="number" name="" value="0" readonly>円</td>
+      </div>
+
+      <div class="mainleft">
+        &#9319;扶養控除-所得(下で入力)
+      </div>
+      <div class="mainright">
+        <input id="扶養控除-所得" type="number" name="" value="0" readonly>円</td>
+      </div>
+
+      <div class="mainleft">
+        &#9320;扶養控除-住民(下で入力)
+      </div>
+      <div class="mainright">
+        <input id="扶養控除-住民" type="number" name="" value="0" readonly>円</td>
       </div>
 
 
     </div> <!-- main -->
+
+    <h3>扶養控除計算</h3>
+    <div class="border">
+        <aside class="">
+          ※扶養親族=年間の合計所得金額が48万円以下の、
+          配偶者以外の親族。(税金計算機より引用)
+        </aside>
+
+        <div id="huyou">
+          <div class="">・一般(16 <= age)</div>
+          <select id="huyou-ippan"
+            class="requiredInput" onchange="calcHuyou();">
+            <option value="0">0人</option>
+            <option value="1">1人</option>
+            <option value="2">2人</option>
+            <option value="3">3人</option>
+            <option value="4">4人</option>
+            <option value="5">5人</option>
+            <option value="6">6人</option>
+            <option value="7">7人</option>
+            <option value="8">8人</option>
+            <option value="9">9人</option>
+          </select>
+
+          <div class="">・特定(19 <= age < 23)</div>
+          <select id="huyou-tokutei"
+            class="requiredInput" onchange="calcHuyou();">
+            <option value="0">0人</option>
+            <option value="1">1人</option>
+            <option value="2">2人</option>
+            <option value="3">3人</option>
+            <option value="4">4人</option>
+            <option value="5">5人</option>
+            <option value="6">6人</option>
+            <option value="7">7人</option>
+            <option value="8">8人</option>
+            <option value="9">9人</option>
+          </select>
+
+          <div class="">・同居老親(70 <= age,同居直系尊属)</div>
+          <select id="huyou-doukyoroushin"
+            class="requiredInput" onchange="calcHuyou();">
+            <option value="0">0人</option>
+            <option value="1">1人</option>
+            <option value="2">2人</option>
+            <option value="3">3人</option>
+            <option value="4">4人</option>
+            <option value="5">5人</option>
+            <option value="6">6人</option>
+            <option value="7">7人</option>
+            <option value="8">8人</option>
+            <option value="9">9人</option>
+          </select>
+
+          <div class="">・老人(70 <= age)</div>
+          <select id="huyou-roujin"
+            class="requiredInput" onchange="calcHuyou();">
+            <option value="0">0人</option>
+            <option value="1">1人</option>
+            <option value="2">2人</option>
+            <option value="3">3人</option>
+            <option value="4">4人</option>
+            <option value="5">5人</option>
+            <option value="6">6人</option>
+            <option value="7">7人</option>
+            <option value="8">8人</option>
+            <option value="9">9人</option>
+          </select>
+
+        </div>
+
+    </div><!-- huyoukeisan -->
+
+
+      <h3 style="margin-top:50px;">補足</h3>
+      <aside class="">
+      <ul>
+        <li>
+          給与所得控除:給与の一部を経費としてみなすことができる。
+          <a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm">計算式</a>
+        </li>
+        <li>
+          総所得金額:給与から給与所得控除を引いたもの。
+        </li>
+        <li>
+          厚生年金保険料控除:「給与 × 18.3% ÷ 2」で算出しています
+        </li>
+        <li>
+          健康保険料:宮城県のもので算出。
+          条件は「介護保険第２号被保険者に該当しない場合」で「折半」
+        </li>
+        <li>
+          雇用保険料:一般社員として算出。計算式は「給与収入*0.003」
+        </li>
+        <li>
+          扶養控除:それぞれの人数について
+          <ul>
+            <li>所得税の扶養控除は各38/63/58/48万円</li>
+            <li>住民税の扶養控除は各33/45/45/38万円</li>
+          </ul>
+        </li>
+
+      </ul>
+    </aside>
   </div><!-- contents -->
 
-  <aside class="">
-    <div class="">
-      ・給与所得控除:給与の一部を経費としてみなすことができる。
-      <a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm">計算式</a>
-    </div>
-    <div class="">
-      ・総所得金額:給与から給与所得控除を引いたもの。
-    </div>
-    <div class="">
-      ・厚生年金保険料控除:「給与 × 18.3% ÷ 2」で算出しています
-    </div>
-    <div class="">
-      ・健康保険料:宮城県のもので算出。
-      条件は「介護保険第２号被保険者に該当しない場合」で「折半」
-    </div>
-  </aside>
+
 <script src="calctax.js"></script>
 </body>
 

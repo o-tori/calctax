@@ -12,7 +12,9 @@ function inputKyuuyo(salary){
   document.getElementById("厚生年金保険料控除").value = kousei;
   const kenkou = calcMiyagiKenkou(salary);
   document.getElementById("健康保険料控除").value = kenkou;
-  const shakaikoujo = kousei + kenkou;
+  const koyou = calcKoyou(salary);
+  document.getElementById("雇用保険料控除").value = koyou;
+  const shakaikoujo = kousei + kenkou + koyou;
   document.getElementById("社会保険料控除").value = shakaikoujo;
 }
 
@@ -142,4 +144,19 @@ function calcMiyagiKenkou(salary) {
   }
 
   return premiumPerMonth * 12;
+}
+function calcKoyou(salary) {
+  return Math.floor(salary * 0.003);
+}
+function calcHuyou() {
+  const ippan = document.getElementById("huyou-ippan").value;
+  const tokutei = document.getElementById("huyou-tokutei").value;
+  const doukyoroushin = document.getElementById("huyou-doukyoroushin").value;
+  const roujin = document.getElementById("huyou-roujin").value;
+
+  const huyouShotoku = ippan*380000 + tokutei*630000 + doukyoroushin*580000 + roujin*480000;
+  const huyouJuumin  = ippan*330000 + tokutei*450000 + doukyoroushin*450000 + roujin*380000;
+
+  document.getElementById("扶養控除-所得").value = huyouShotoku;
+  document.getElementById("扶養控除-住民").value = huyouJuumin;
 }
