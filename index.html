@@ -200,7 +200,7 @@
         <div id="huyou">
           <label for="huyou-ippan">・一般(16 <= age)</label>
           <select id="huyou-ippan"
-            class="requiredInput" onchange="calcHuyou();">
+            class="requiredInput" onchange="calcHuyou();calculate()">
             <option value="0">0人</option>
             <option value="1">1人</option>
             <option value="2">2人</option>
@@ -215,7 +215,7 @@
 
           <label for="huyou-tokutei">・特定(19 <= age < 23)</label>
           <select id="huyou-tokutei"
-            class="requiredInput" onchange="calcHuyou();">
+            class="requiredInput" onchange="calcHuyou();calculate();">
             <option value="0">0人</option>
             <option value="1">1人</option>
             <option value="2">2人</option>
@@ -230,7 +230,7 @@
 
           <label for="huyou-doukyoroushin">・同居老親(70 <= age,同居直系尊属)</label>
           <select id="huyou-doukyoroushin"
-            class="requiredInput" onchange="calcHuyou();">
+            class="requiredInput" onchange="calcHuyou();calculate();">
             <option value="0">0人</option>
             <option value="1">1人</option>
             <option value="2">2人</option>
@@ -245,7 +245,7 @@
 
           <label for="huyou-roujin">・老人(70 <= age)</label>
           <select id="huyou-roujin"
-            class="requiredInput" onchange="calcHuyou();">
+            class="requiredInput" onchange="calcHuyou();calculate();">
             <option value="0">0人</option>
             <option value="1">1人</option>
             <option value="2">2人</option>
@@ -305,11 +305,9 @@
           課税所得:1000円未満は切り捨て。
         </li>
         <li>
-          住民税:+2500の部分には住民税均等割りが含まれる。
-          ここでは5000円として計算している。
-          また、住民税には税額控除が効くらしい。
-          ここでは7500円の控除があると仮定している。
-          よって合計で、+2500円としている。
+          住民税:正直よくわかってないんだけど、
+          だいたい課税所得*10%+均等割り？らしく、
+          とりあえず均等割りは2500円にしています
         </li>
       </ul>
     </aside>

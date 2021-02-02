@@ -5,9 +5,6 @@ function calculate() {
   const souShotoku = document.getElementById("総所得金額").value -0;
   calculateShotokuzei(souShotoku);
   calculateJuuminzei(souShotoku);
-
-
-//TODO juuminzei
 }
 function calculateShotokuzei(souShotoku){
   const shakaiKoujo = document.getElementById("社会保険料控除").value -0;
@@ -27,12 +24,29 @@ function calculateShotokuzei(souShotoku){
   kazeiShotoku_shotoku = Math.floor(kazeiShotoku_shotoku/1000)*1000//1000未満切り捨て
   document.getElementById("課税所得-所得税").value = kazeiShotoku_shotoku;
 
-  const shotokuzei = Math.floor(kazeiShotoku_shotoku * 0.05);
+  const shotokuzei = shotokuzei(kazeiShotoku_shotoku);
   const hukkouTokubetsuShotokuzei = Math.floor(shotokuzei * 0.021);
   const sumShotokuzei = Math.floor((shotokuzei + hukkouTokubetsuShotokuzei) /100) * 100;
   document.getElementById("所得税").value = shotokuzei;
   document.getElementById("復興特別所得税").value = hukkouTokubetsuShotokuzei;
   document.getElementById("所得税・復興特別所得税").value = sumShotokuzei;
+}
+function shotokuzei(kazeishotoku) {
+    if(kazeishotoku < 1950000){
+      return Math.floor(kazeishotoku*0.05);
+    }else if(kazeishotoku < 3300000){
+      return Math.floor(kazeishotoku*0.1) - 97500;
+    }else if(kazeishotoku < 6950000){
+      return Math.floor(kazeishotoku*0.2) - 427500;
+    }else if(kazeishotoku < 9000000){
+      return Math.floor(kazeishotoku*0.23) - 636000;
+    }else if(kazeishotoku < 18000000){
+      return Math.floor(kazeishotoku*0.33) - 1536000;
+    }else if(kazeishotoku < 40000000){
+      return Math.floor(kazeishotoku*0.40) - 2796000;
+    }else {
+      return Math.floor(kazeishotoku*0.45) - 4796000;
+    }
 }
 function calculateJuuminzei(souShotoku) {
   const shakaiKoujo = document.getElementById("社会保険料控除").value -0;
