@@ -33,7 +33,7 @@
       </label>
       <div class="mainright">
         <input id="給与収入" class="requiredInput"
-          type="number" value="0" onchange="inputKyuuyo();calc();">円
+          type="number" value="0" onchange="inputKyuuyo();calculate();">円
       </div>
 
       <label for="給与所得控除">
@@ -181,7 +181,7 @@
       </div>
 
       <label for="住民税">
-        &#9329;<strong>住民税</strong>(&#9326;*10% +α)
+        &#9329;<strong>住民税</strong>(&#9326;*10% +2500)
       </label>
       <div class="mainright">
         <input id="住民税" type="number" value="0" readonly>円
@@ -299,6 +299,16 @@
             <li>所得税の基礎控除:最大48万円</li>
             <li>住民税の基礎控除:最大43万円</li>
           </ul>
+        </li>
+        <li>
+          課税所得:1000円未満は切り捨て。
+        </li>
+        <li>
+          住民税:+2500の部分には住民税均等割りが含まれる。
+          ここでは5000円として計算している。
+          また、住民税には税額控除が効くらしい。
+          ここでは7500円の控除があると仮定している。
+          よって合計で、+2500円としている。
         </li>
       </ul>
     </aside>
