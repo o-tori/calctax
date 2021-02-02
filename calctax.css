@@ -31,9 +31,10 @@ header h1{
 
     font-size: larger;
 }
-h3{
+h2{
   border-left: 5px solid #078;
   padding-left: 10px;
+  font-size: larger;
 }
 .description{
   text-align: center;
