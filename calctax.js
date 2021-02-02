@@ -24,14 +24,14 @@ function calculateShotokuzei(souShotoku){
   kazeiShotoku_shotoku = Math.floor(kazeiShotoku_shotoku/1000)*1000//1000未満切り捨て
   document.getElementById("課税所得-所得税").value = kazeiShotoku_shotoku;
 
-  const shotokuzei = shotokuzei(kazeiShotoku_shotoku);
+  const shotokuzei = shotokuzeiwomotomeru(kazeiShotoku_shotoku);
   const hukkouTokubetsuShotokuzei = Math.floor(shotokuzei * 0.021);
   const sumShotokuzei = Math.floor((shotokuzei + hukkouTokubetsuShotokuzei) /100) * 100;
   document.getElementById("所得税").value = shotokuzei;
   document.getElementById("復興特別所得税").value = hukkouTokubetsuShotokuzei;
   document.getElementById("所得税・復興特別所得税").value = sumShotokuzei;
 }
-function shotokuzei(kazeishotoku) {
+function shotokuzeiwomotomeru(kazeishotoku) {
     if(kazeishotoku < 1950000){
       return Math.floor(kazeishotoku*0.05);
     }else if(kazeishotoku < 3300000){
