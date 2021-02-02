@@ -4,6 +4,8 @@
 <head>
   <meta name="viewport" content="width=device-width">
   <meta charset="utf-8">
+  <meta name="theme-color" content="#078">
+  <meta name="description" content="個人用の税金計算機です">
   <title>個人用税金計算器</title>
   <link rel="stylesheet" href="calctax.css">
 </head>
@@ -26,24 +28,24 @@
 
     <h3>税金計算器</h3>
     <div id="main"class="border">
-      <div class="mainleft">
+      <label for="給与収入">
         &#9312;給与収入
-      </div>
+      </label>
       <div class="mainright">
         <input id="給与収入" class="requiredInput"
           type="number" value="0" onchange="inputKyuuyo();calc();">円
       </div>
 
-      <div class="mainleft ">
+      <label for="給与所得控除">
         &#9313;給与所得控除
-      </div>
+      </label>
       <div class="mainright ">
         <input id="給与所得控除" type="number" name="" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="総所得金額">
         &#9314;<strong>総所得金額</strong>(&#9312;-&#9313;)
-      </div>
+      </label>
       <div class="mainright">
         <input id="総所得金額" type="number" name="" value="0" readonly>円
       </div>
@@ -51,31 +53,30 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <div class="mainleft">
+      <label for="厚生年金保険料控除">
         &#9315;厚生年金保険料控除
-      </div>
-
+      </label>
       <div class="mainright">
         <input id="厚生年金保険料控除" type="number" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="健康保険料控除">
         &#9316;健康保険料控除
-      </div>
+      </label>
       <div class="mainright">
         <input id="健康保険料控除" type="number" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="雇用保険料控除">
         &#9317;雇用保険料控除
-      </div>
+      </label>
       <div class="mainright">
         <input id="雇用保険料控除" type="number" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="社会保険料控除">
         &#9318;社会保険料控除(&#9315;+&#9316;+&#9317;)
-      </div>
+      </label>
       <div class="mainright">
         <input id="社会保険料控除" type="number" value="0" readonly>円
       </div>
@@ -83,16 +84,16 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <div class="mainleft">
+      <label for="扶養控除-所得税">
         &#9319;扶養控除-所得税(下で入力)
-      </div>
+      </label>
       <div class="mainright">
         <input id="扶養控除-所得税" type="number" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="扶養控除-住民税">
         &#9320;扶養控除-住民税(下で入力)
-      </div>
+      </label>
       <div class="mainright">
         <input id="扶養控除-住民税" type="number" value="0" readonly>円
       </div>
@@ -100,23 +101,23 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <div class="mainleft">
+      <label for="配偶者所得">
         　配偶者の所得 <span style="color:blue">※未実装</span>
-      </div>
+      </label>
       <div class="mainright">
         <input id="配偶者所得" class="requiredInput" type="number" value="0">円
       </div>
 
-      <div class="mainleft">
+      <label for="配偶者控除-所得税">
         &#9321;配偶者控除-所得税
-      </div>
+      </label>
       <div class="mainright">
         <input id="配偶者控除-所得税" type="number" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="配偶者控除-住民税">
         &#9322;配偶者控除-住民税
-      </div>
+      </label>
       <div class="mainright">
         <input id="配偶者控除-住民税" type="number" value="0" readonly>円
       </div>
@@ -124,16 +125,16 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <div class="mainleft">
+      <label for="基礎控除-所得税">
         &#9323;基礎控除-所得税
-      </div>
+      </label>
       <div class="mainright">
         <input id="基礎控除-所得税" type="number" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="基礎控除-住民税">
         &#9324;基礎控除-住民税
-      </div>
+      </label>
       <div class="mainright">
         <input id="基礎控除-住民税" type="number" value="0" readonly>円
       </div>
@@ -141,16 +142,16 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <div class="mainleft">
+      <label for="課税所得-所得税">
         &#9325;課税所得-所得税(&#9314;-&#9318;-&#9319;-&#9321;-&#9323;)
-      </div>
+      </label>
       <div class="mainright">
         <input id="課税所得-所得税" type="number" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="課税所得-住民税">
         &#9326;課税所得-住民税(&#9314;-&#9318;-&#9320;-&#9322;-&#9324;)
-      </div>
+      </label>
       <div class="mainright">
         <input id="課税所得-住民税" type="number" value="0" readonly>円
       </div>
@@ -158,30 +159,30 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <div class="mainleft">
+      <label for="所得税">
         &#9327;所得税(&#9325;*5%)
-      </div>
+      </label>
       <div class="mainright">
         <input id="所得税" type="number" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="復興特別所得税">
         &#9327;復興特別所得税(&#9327;*2.1%)
-      </div>
+      </label>
       <div class="mainright">
         <input id="復興特別所得税" type="number" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="所得税・復興特別所得税">
         &#9328;<strong>所得税・復興特別所得税</strong>(&#9327;+&#9328;)
-      </div>
+      </label>
       <div class="mainright">
         <input id="所得税・復興特別所得税" type="number" value="0" readonly>円
       </div>
 
-      <div class="mainleft">
+      <label for="住民税">
         &#9329;<strong>住民税</strong>(&#9326;*10% +α)
-      </div>
+      </label>
       <div class="mainright">
         <input id="住民税" type="number" value="0" readonly>円
       </div>
