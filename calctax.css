@@ -14,6 +14,7 @@ header{
   transform: translateX(-50%);
   width:100%;
   height:50px;
+  z-index: 10;
 
   background-color:#078;
 }
@@ -77,6 +78,7 @@ aside .toplevelLi{
 /***********tooltip settings*************/
 label{
   position: relative;
+  z-index: 0;
 }
 label[descr]:hover{
   cursor: help;
