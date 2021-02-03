@@ -45,7 +45,7 @@ h2{
 }
 
 .requiredInput{
-  background-color: yellow;
+  background-color: #00ff4670;
 }
 #main{
   display: grid;
