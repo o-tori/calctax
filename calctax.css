@@ -72,3 +72,26 @@ aside{
 aside .toplevelLi{
   margin-bottom : 10px;
 }
+
+
+/***********tooltip settings*************/
+label{
+  position: relative;
+}
+label[descr]:hover{
+  cursor: help;
+}
+label[descr]:hover::after{
+  content: attr(descr);
+  position: absolute;
+  left: 50px;
+  top: -30px;
+  min-width: 200px;
+  border: 1px #aaaaaa solid;
+  border-radius: 10px;
+  background-color: #078;
+  padding: 12px;
+  color: #fff;
+  font-size: 14px;
+  z-index: 1;
+}

@@ -24,6 +24,8 @@
       <p>
         <span class="requiredInput">この色</span>のとこに入力しろよな
         <br>
+        各項目にマウスをのせる(タップする)と、説明がでるよ
+        <br>
         未実装の控除:配偶者,医療費,生命保険,地震保険
         <br>
         参考:<a href="https://www.zeikin5.com/calc/">このサイト</a>
@@ -32,7 +34,8 @@
 
     <h2>税金計算器</h2>
     <div id="main"class="border">
-      <label for="給与収入">
+      <label for="給与収入"
+        descr="単純な収入のことです">
         &#9312;給与収入
       </label>
       <div class="mainright">
@@ -40,14 +43,16 @@
           type="number" value="0" onchange="inputKyuuyo();calculate();">円
       </div>
 
-      <label for="給与所得控除">
+      <label for="給与所得控除"
+        descr="給与のうち、労働に必要な経費として認められる部分です">
         &#9313;給与所得控除
       </label>
       <div class="mainright ">
         <input id="給与所得控除" type="number" name="" value="0" readonly>円
       </div>
 
-      <label for="総所得金額">
+      <label for="総所得金額"
+        descr="儲けとして扱われる部分です。こいつからいろいろ控除します。">
         &#9314;<strong>総所得金額</strong>(&#9312;-&#9313;)
       </label>
       <div class="mainright">
@@ -57,21 +62,24 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <label for="厚生年金保険料控除">
+      <label for="厚生年金保険料控除"
+        descr="給与収入 × 18.3% ÷ 2">
         &#9315;厚生年金保険料控除
       </label>
       <div class="mainright">
         <input id="厚生年金保険料控除" type="number" value="0" readonly>円
       </div>
 
-      <label for="健康保険料控除">
+      <label for="健康保険料控除"
+          descr="宮城県のものです">
         &#9316;健康保険料控除
       </label>
       <div class="mainright">
         <input id="健康保険料控除" type="number" value="0" readonly>円
       </div>
 
-      <label for="雇用保険料控除">
+      <label for="雇用保険料控除"
+        descr="給与収入 × 0.3%">
         &#9317;雇用保険料控除
       </label>
       <div class="mainright">
@@ -88,14 +96,16 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <label for="扶養控除-所得税">
+      <label for="扶養控除-所得税"
+        descr="下の方に入力フォームがあります">
         &#9319;扶養控除-所得税(下で入力)
       </label>
       <div class="mainright">
         <input id="扶養控除-所得税" type="number" value="0" readonly>円
       </div>
 
-      <label for="扶養控除-住民税">
+      <label for="扶養控除-住民税"
+        descr="下の方に入力フォームがあります">
         &#9320;扶養控除-住民税(下で入力)
       </label>
       <div class="mainright">
@@ -105,7 +115,8 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <label for="配偶者所得">
+      <label for="配偶者所得"
+        descr="難しくてまだ実装してないの…">
         　配偶者の所得 <span style="color:blue">※未実装</span>
       </label>
       <div class="mainright">
@@ -129,14 +140,16 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <label for="基礎控除-所得税">
+      <label for="基礎控除-所得税"
+        descr="全ての人から控除される額です">
         &#9323;基礎控除-所得税
       </label>
       <div class="mainright">
         <input id="基礎控除-所得税" type="number" value="0" readonly>円
       </div>
 
-      <label for="基礎控除-住民税">
+      <label for="基礎控除-住民税"
+        descr="全ての人から控除される額です">
         &#9324;基礎控除-住民税
       </label>
       <div class="mainright">
@@ -146,14 +159,16 @@
       <!-- empty row -->
       <div class=""></div><div class=""></div>
 
-      <label for="課税所得-所得税">
+      <label for="課税所得-所得税"
+        descr="これに所得税がかかります">
         &#9325;課税所得-所得税(&#9314;-&#9318;-&#9319;-&#9321;-&#9323;)
       </label>
       <div class="mainright">
         <input id="課税所得-所得税" type="number" value="0" readonly>円
       </div>
 
-      <label for="課税所得-住民税">
+      <label for="課税所得-住民税"
+        descr="これに住民税がかかります">
         &#9326;課税所得-住民税(&#9314;-&#9318;-&#9320;-&#9322;-&#9324;)
       </label>
       <div class="mainright">
@@ -170,7 +185,8 @@
         <input id="所得税" type="number" value="0" readonly>円
       </div>
 
-      <label for="復興特別所得税">
+      <label for="復興特別所得税"
+        descr="東日本大震災の復興財源になります。2037年まで課せられます。">
         &#9327;復興特別所得税(&#9327;*2.1%)
       </label>
       <div class="mainright">
