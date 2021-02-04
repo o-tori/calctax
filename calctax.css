@@ -51,7 +51,7 @@ h2{
 #main{
   display: grid;
   grid-template-rows: repeat(27,2em);
-  grid-template-columns:1fr 7em;
+  grid-template-columns:1fr 8em;
 }
 #main input{
   width: 8em;
